@@ -1,0 +1,34 @@
+Source: golang-google-api
+Section: devel
+Priority: optional
+Maintainer: Debian Go Packaging Team <pkg-go-maintainers@lists.alioth.debian.org>
+Uploaders: Martín Ferrari <tincho@debian.org>,
+           Michael Stapelberg <stapelberg@debian.org>,
+           Tim Potter <tpot@hpe.com>,
+Build-Depends: debhelper (>= 10),
+               dh-golang (>= 1.10~),
+               golang-any,
+               golang-golang-x-net-dev,
+               golang-golang-x-oauth2-dev,
+               golang-golang-x-oauth2-google-dev (>=0.0~git20170901.d89af98),
+               golang-google-genproto-dev,
+               golang-google-grpc-dev,
+Standards-Version: 4.1.0
+Vcs-Browser: https://anonscm.debian.org/cgit/pkg-go/packages/golang-google-api.git
+Vcs-Git: https://anonscm.debian.org/git/pkg-go/packages/golang-google-api.git
+Homepage: https://google.golang.org/api
+XS-Go-Import-Path: google.golang.org/api
+Testsuite: autopkgtest-pkg-go
+
+Package: golang-google-api-dev
+Architecture: all
+Depends: golang-golang-x-net-dev,
+         golang-golang-x-oauth2-dev,
+         golang-golang-x-oauth2-google-dev (>=0.0~git20170901.d89af98),
+         golang-google-genproto-dev,
+         golang-google-grpc-dev,
+         ${misc:Depends},
+         ${shlibs:Depends},
+Description: Google APIs Client Library
+ These are auto-generated Go libraries from the Google Discovery Service's JSON
+ description files of the available "new style" Google APIs.

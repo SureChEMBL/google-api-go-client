@@ -1,0 +1,13 @@
+#!/usr/bin/make -f
+
+# The example programs should not be compiled, and we are not interested in the
+# generator itself either, only its output.
+export DH_GOLANG_EXCLUDES := google.golang.org/api/google-api-go-generator google.golang.org/api/examples
+
+override_dh_auto_test: DH_GOLANG_EXCLUDES += google.golang.org/api/internal
+override_dh_auto_test:
+	# google.golang.org/internal is skiped since we don't have go-cmp yet
+	dh_auto_test
+
+%:
+	dh $@ --buildsystem=golang --with=golang
